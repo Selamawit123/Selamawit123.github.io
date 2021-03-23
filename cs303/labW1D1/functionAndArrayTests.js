@@ -1,85 +1,66 @@
 "use strict";
-
-/* You need the assert and function name declarations to test in node.  
-Comment these out when you send it to the browser with the index.html mocha setup page.
-*/
-const assert = require("assert");  //always need this with node
-const myExports = require("./app.js");  //with node need the name of your file with your functions here
-const maxOfThree = myExports.maxOfThree;  //do this for all of the functions used in the Mocha tests
-const multiply = myExports.multiply;
-const sum = myExports.sum;
-
+const assert = require("assert");
+const test = require("./app.js");
 
 /* global assert maxOfThree sum multiply findLongestWord reverseArray reverseArrayInPlace scoreExams */
 
-/* 1.	1.	Define a function maxOfThree() that takes three numbers as arguments and returns the largest of them.  */
+/* 1.   1.  Define a function maxOfThree() that takes three numbers as arguments and returns the largest of them.  */
 describe("maxOfThree", function () {
     it("tests 1 2 3", function () {
-        assert.strictEqual(maxOfThree(1, 2, 3), 3);
-    });
-    it("tests 1 3 2", function () {
-        assert.strictEqual(maxOfThree(10, 30, 20), 30);
-    });
-    it("tests 2 1 3", function () {
-        assert.strictEqual(maxOfThree(2, 1, 3), 3);
-    });
-    it("tests 2 3 1", function () {
-        assert.strictEqual(maxOfThree(22, 33, 11), 33);
+        assert.strictEqual(test.maxOfThree(1, 2, 3), 3);
     });
     it("tests 3 2 1", function () {
-        assert.strictEqual(maxOfThree(3, 2, 1), 3);
-    });
-    it("tests 3 1 2", function () {
-        assert.strictEqual(maxOfThree(333, 111, 222), 333);
+        assert.strictEqual(test.maxOfThree(3, 2, 1), 3);
     });
     it("tests -1 -2 -3", function () {
-        assert.strictEqual(maxOfThree(-1, -2, -3), -1);
+        assert.strictEqual(test.maxOfThree(-1, -2, -3), -1);
     });
 });
 
+  
 /*
-2.	Define a function sum() and a function multiply() that sums and multiplies (respectively) all the numbers in an array of numbers. For example, sum([1,2,3,4]) should return 10,
+2.  Define a function sum() and a function multiply() that sums and multiplies (respectively) all the numbers in an array of numbers. For example, sum([1,2,3,4]) should return 10,
  and multiply([1,2,3,4]) should return 24. 
  */
 describe("sum and multiply", function () {
     it("tests sum of 1 2 3", function () {
-        assert.strictEqual(sum([1, 2, 3]), 6);
+        assert.strictEqual(test.sum([1, 2, 3]), 6);
     });
     it("tests multiply 3 2 10", function () {
-        assert.strictEqual(multiply([3, 2, 10]), 60);
+        assert.strictEqual(test.multiply([3, 2, 10]), 60);
     });
 });
 
 
 /*
-3.	Write a function findLongestWord() that takes an array of words and returns the length of the longest one. 
+3.  Write a function findLongestWord() that takes an array of words and returns the length of the longest one. 
 */
 describe("findLongestWord", function () {
     it("tests longest", function () {
-        assert.strictEqual(findLongestWord(["this", "is", "a", "test", "longest"]), "longest");
+        assert.strictEqual(test.findLongestWord(["this", "is", "a", "test", "longest"]),7);
     });
     it("tests longest with spaces", function () {
-        assert.strictEqual(findLongestWord(["this", "is", "a word with spaces", "test", "longest"]), "a word with spaces");
+        assert.strictEqual(test.findLongestWord(["this", "is", "a word with spaces", "test", "longest"]),18);
     });
 });
 
 
 /*
-4.	Reverse an Array 
+4.  Reverse an Array 
 Arrays have a reverse method that changes the array by inverting the order in which its elements appear. For this exercise, write two functions, reverseArray and reverseArrayInPlace. The first, reverseArray, takes an array as argument and produces a new array that has the same elements in the inverse order. The second, reverseArrayInPlace, does what the reverse method does: it modifies the array given as argument by reversing its elements. Neither may use the standard reverse method. 
 */
 describe("reverseArray", function () {
     it("tests reverseArray odd number elements", function () {
-        assert.deepEqual(reverseArray(["A", "B", "C"]), ["C", "B", "A"]);
+        assert.deepStrictEqual(test.reverseArray(["A", "B", "C"]), ["C", "B", "A"]);
     });
     it("tests reverseArray even number elements", function () {
-        assert.deepEqual(reverseArrayInPlace(["A", "B", "C", "D"]), ["D", "C", "B", "A"]);
+        assert.deepStrictEqual(test.reverseArrayInPlace(["A", "B", "C", "D"]), ["D", "C", "B", "A"]);
     });
     it("tests reverseArrayInPlace even number elements", function () {
-        assert.deepEqual(reverseArrayInPlace(["A", "B", "C", "D"]), ["D", "C", "B", "A"]);
+        assert.deepStrictEqual(test.reverseArrayInPlace(["A", "B", "C", "D"]), ["D", "C", "B", "A"]);
     });
     it("tests reverseArrayInPlace odd number elements", function () {
-        assert.deepEqual(reverseArray([1, 2, 3, 4, 5]), [5, 4, 3, 2, 1]);
+        assert.deepStrictEqual(test.reverseArray([1, 2, 3, 4, 5]), [5, 4, 3, 2, 1]);
     });
 });
 
@@ -93,13 +74,13 @@ const correctAnswers = [3, 1, 2];
 scoreExams(studentAnswers, correctAnswers)); --> [2, 2, 2]
 */
 /*
-4.	Reverse an Array 
+4.  Reverse an Array 
 Arrays have a reverse method that changes the array by inverting the order in which its elements appear. For this exercise, write two functions, reverseArray and reverseArrayInPlace. The first, reverseArray, takes an array as argument and produces a new array that has the same elements in the inverse order. The second, reverseArrayInPlace, does what the reverse method does: it modifies the array given as argument by reversing its elements. Neither may use the standard reverse method. 
 */
 describe("score exam", function () {
     const studentAnswers = [[1, 1, 2], [2, 1, 2], [3, 1, 3]];
     const correctAnswers = [3, 1, 2];
     it("exam with 3 students", function () {
-        assert.deepEqual(scoreExams(studentAnswers, correctAnswers), [2, 2, 2]);
+        assert.deepStrictEqual(test.scoreExams(studentAnswers, correctAnswers), [2, 2, 2]);
     });
 });

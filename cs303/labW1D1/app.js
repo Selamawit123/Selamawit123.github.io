@@ -1,32 +1,31 @@
 "use strict";
 /**
  * 
- * @param {number} a is a number
- * @param {number} b is a number 
- * @param {number} c is a number
+ * @param {number} num1 is a number
+ * @param {number} num2 is a number 
+ * @param {number} num3 is a number
  * @returns {number} largest of a, b, c
  */
-function maxOfThree(a, b, c){ 
-    if(a>b&&a>c){
-        return a;
+function maxOfThree(num1, num2, num3){ 
+    if(num1>num2&&num1>num3){
+        return num1;
     }
-    else if(b>a&&b>c){
-        return b;
+    else if(num2>num1&&num2>num3){
+        return num2;
     }
     else{
-    return c;
+    return num3;
      }
 }
 
 /**
- * 
- * @param {Array} arr of numbers
+ * @param {Number} arr of numbers
  * @returns {number} sum of arr numbers
  */
 function sum(arr){
     let total = 0;
     
-    for(let i=0; i<arr.length; i++);{
+    for(let i=0; i<arr.length; i++){
         total= total +arr[i];
 
     }
@@ -87,22 +86,26 @@ function reverseArray(arr){
      return arr1;
     
  }
- console.log(reverseArray(["3","2","1"]));
+ //console.log(reverseArray(["3","2","1"]));
 /**
  * 
  * @param {String} arr of String
  * @returns {String} reversed String
  */
  function reverseArrayInPlace(arr){
-    let arr1=0;
-    for(let i=0; i<arr.length;i++){
-        arr1= arr.reverse();
-    }
-    return arr1;
-}
-console.log(reverseArrayInPlace(["3","2","1"]));
- 
     
+    for(let i=0; i<arr.length;i++){
+         arr.reverse();
+    }
+    return arr.reverse();
+}
+//console.log(reverseArrayInPlace(["3","2","1"]));
+/**
+ * 
+ * @param {Number} array of Student answers
+ * @param {Number} correctAnswers correct answers
+ * @returns {Number} correctCount
+ */    
 function scoreExams(array, correctAnswers) {
     let studentsAnswers = [];
  
@@ -119,7 +122,7 @@ function scoreExams(array, correctAnswers) {
     return studentsAnswers;
 }
  
-console.log(scoreExams([[1, 1, 2], [2, 1, 2], [3, 1, 3]], [3, 1, 2]));
+//console.log(scoreExams([[1, 1, 2], [2, 1, 2], [3, 1, 3]], [3, 1, 2]));
 module.exports= {maxOfThree,sum,multiply,findLongestWord,reverseArray,reverseArrayInPlace,scoreExams}
 
 
