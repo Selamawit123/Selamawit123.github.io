@@ -1,5 +1,10 @@
 "use strict";
 /* global assert Accumulator */
+const assert = require("assert");  
+const myExports = require("./accumulator.js");
+const myExports = require("./calc.js");
+const Accumulator = myExports.Accumulator;  
+const Calculator = myExports.Calculator;  
 
 /*
 Write a constructor function Accumulator(initialValue, increment).  The object it creates should:
