@@ -1,9 +1,9 @@
 "use strict";
 
 /* global assert Calculator */
-const assert = require("assert");  
+/*const assert = require("assert");  
 const myExports = require("./calc.js");
-const Calculator = myExports.Calculator;  
+const Calculator = myExports.Calculator; */
 
 
 describe("calculator from constructor function", function () {

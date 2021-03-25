@@ -1,20 +1,29 @@
-"use strict"
-module.exports={Accumulator};
+ "use strict"
 /**
  * 
-
- * @returns {Accumulator} constructor function
+ * @param {*} currentValue 
+ * @param {*} increment 
+  * @returns {Accumulator} constructor function
  */
- function Accumulator(startVal) {
-    this.value = startVal;
-  
-    this.read = function(val1,val2) {
-      this.value= this.value+ val1+val2 ;
-    };
-  
-  }
-  
-  let accumulator = new Accumulator(1);
-  accumulator.read();
-  accumulator.read();
+function Accumulator(currentValue,increment){
+       this.currentValue=currentValue;
+       this.increment=increment;
+       /**
+        * 
+        * @returns current values+ increment
+        */
+       this.accumulate=function(){
+         return this.currentValue+=this.increment;
+       }
+       /**
+        * 
+        * @returns the current values
+        */
+       this.report=function(){
+          return this.currentValue;   
+       }
+}
+let accumulate= new Accumulator(4,6)
+let accumulate= new Accumulator(4,6)
+accumulate();
   
