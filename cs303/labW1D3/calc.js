@@ -14,21 +14,21 @@ function Calculator(){
     };
     /**
      * 
-     * @returns {Number} multiplication;
+     * @returns {Number} multiply;
      */
     this.mul=function(){
         return this.a*this.b;
     };
     /**
      * 
-     * @returns {Number} subtraction;
+     * @returns {Number} subtract;
      */
     this.sub=function(){
         return this.a-this.b;
     };
     /**
      * 
-     * @returns {Number} division;
+     * @returns {Number} divide;
      */
     this.div=function(){
         return this.a/this.b;
