@@ -4,28 +4,22 @@ element of the array and saving the result in the new array. Do not use the Arra
 your code*/
 "use strict"
  module.exports= {myFilter, myReduce,evenValue,sumValue};
-const array= [10,30,45,60];
-let users= [{ id:1,name:"Selam"},
-{id:2, name:"Nahom"},
-{id:3, name: "Mahe"}
-]
-
-Array.prototype.custeMap = function(myMap){
-let newArray= [];
-for( let i=0;i<this.length;i++){
-    newArray.push(myMap(this[i]));
-}
-return newArray;
-}
-let newUsers = users.custeMap(obj=>{
-    let nObj ={}
-    nObj[obj.id]= obj.name;
-    return nObj;
-});
-let newArr= array.custeMap(x => x*2);
-console.log(newArr);
-console.log(newUsers);
-
+ /**
+  * 
+  * @param {Number} arr Given number
+  * @param {Number} fn Function
+  * @returns {Number} power
+  */
+ function myMap(arr,fn) {
+    let myArray = [];
+   
+    for (let i = 0; i < arr.length; i++) {
+      const result =fn(arr[i], i, arr);
+      myArray.push(result);
+    }
+    return myArray;
+  }
+  myMap(arr, num => num*2);
 
 /**
  * 
