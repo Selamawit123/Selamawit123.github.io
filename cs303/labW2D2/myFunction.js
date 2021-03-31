@@ -3,7 +3,7 @@ a function as arguments and returns a new array that is formed by applying the f
 element of the array and saving the result in the new array. Do not use the Array.map method in
 your code*/
 "use strict"
- module.exports= {myFilter, myReduce,evenValue,sumValue};
+ //module.exports= {myFilter, myReduce,evenValue,sumValue};
  /**
   * 
   * @param {Number} arr Given number
