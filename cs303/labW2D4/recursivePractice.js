@@ -1,8 +1,10 @@
 "use strict";
 //1- Qeestion one
-exports.subtree = subtree;
+//exports.subtree = subtree;
 
-
+/**
+ * 
+ */
 class TreeNode {
     constructor(value) {
         this.value = value;
@@ -31,7 +33,7 @@ genet.descendents.push(selam, mahder, nahom);
 /**
  * 
  * @param {*} node 
- * @returns{}
+ * @returns{*}
  */
 function printName(node) {
 
@@ -149,7 +151,7 @@ function treeModifier(treeNode, modFunc) {
 /**
  * 
  * @param {*} node node
- * @return {*} 
+ * @return {*} value
  */
 function caps(node) {
     node.value = node.value.toUpperCase();
@@ -170,17 +172,17 @@ to use an accumulator variable that is external to the function to hold the valu
 /**
  * 
  * @param {*} arg tree 
- * @returns 
+ * @returns {*} x,y or z
  */
 function linkedlist(arg) {
     let x = arg.name;
     let z = arg.next;
     if (z === null) {
-        return x
+        return x;
     }
     else {
         for (let y in arg.name) {
-            linkedlist(y)
+            linkedlist(y);
 
         }
     }
@@ -212,7 +214,7 @@ bank.checkId = function (id) {
 bank.getBalance = function (id) {
     const customer = this.checkId(id);
     const balance = customer.custTrans.reduce((sum, item) => sum + item, 0);
-    return balance
+    return balance;
 }
 
 bank.saveTransaction = function (id, amount) {
