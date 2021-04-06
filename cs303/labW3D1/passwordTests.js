@@ -1,13 +1,13 @@
 "use strict";
 /* You need the assert and function name declarations to test in node.  
-Comment these out when you send it to the browser with the index.html mocha setup page.   */
+Comment these out when you send it to the browser with the index.html mocha setup page.   
 
 const assert = require("assert");  //always need this with node
 const myExports = require("./passwords.js");  //with node need the name of your file with your functions here
 const user = myExports.user;  //do this for all of the functions used in the Mocha tests
 const askPassword = myExports.askPassword;
 const user2 = myExports.user2;
-const askPassword2 = myExports.askPassword2; 
+const askPassword2 = myExports.askPassword2; */
 
 
 describe("fix function that loses 'this'", function () {
