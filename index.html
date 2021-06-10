@@ -1,22 +1,49 @@
-<!DOCTYPE html> 
+<!DOCTYPE html>
+
 <head>
-    <title>Selam Beautiful</title>
+    <meta charset="UTF-8">
+
+    <title>CS445 Project</title>
+
+    <link rel="stylesheet" href="main.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/rxjs/6.6.7/rxjs.umd.js"></script>
+    <script src="main.js"></script>
+
 </head>
 
-<body>
-    <h1>This is Selam's first web page</h1> 
-
-    <a href="family.jpg">My family</a>
-    <img src="family.jpg" alt="family image" Width="500" height="300">
-
-    <p>
-        My name is Selam T originally from Ethiopia & currently, I m living Minnesotta.
-
-        I am currently a Software Development Engineer student at Maharashi International Univerity.
+<body class="content-user">
 
 
-    </p>
 
-    <footer> This is a practice website for school at miu by Selam Teklehaimanot</footer>
+    <h1>This is CS445 Project</h1>
+
+    <h3>Please enter the User ID and Search</h3>
+
+    <div class="user-class" id="user-class-id">
+            <div class="user-web">
+                <div class="seach-div">
+                <input type="text" id="user-id" placeholder="Enter userId">
+
+                <button id="search-user">Search</button>
+            </div>
+            <div class="user">
+                <div class="users-information">
+                    <div id="user-list">
+
+                    </div>
+                </div>
+                <div class="user-posts">
+                    <div id="user-post">
+
+
+                        <div id="user-comments">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
 </body>
+
 </html>
